@@ -1,0 +1,48 @@
+<!-- Code original author: http://typedarray.org/concurrency-in-javascript/ -->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- HTML5 -->
+<meta charset="utf-8"/>
+<script src="return.js"></script>
+<script>
+
+// create the worker
+var worker = new Worker("return.js");
+
+// listen to the response from the Worker
+worker.addEventListener('message', receiveMessage);
+
+started = Date.now();
+
+var uInt8View = new Uint8Array(1024*1024*16); // 16MB
+for (var i = 0; i < uInt8View.length; ++i) {
+    uInt8View[i] = i;
+}
+
+// we send some data
+worker.postMessage(uInt8View.buffer, [uInt8View.buffer]);
+
+// callback handling the response, data is available in the event object
+function receiveMessage (e)
+{
+    console.log ("Tempo para transferir: " + (Date.now() - started) + " ms");
+	console.log(e.data[0]);
+
+	var uInt8View = new Uint8Array(e.data[0]); // 16MB
+	for (var i = 0; i < 5; ++i) {
+		console.log(uInt8View[i]);
+	}
+
+}
+
+</script>
+</head>
+
+<body >
+
+
+
+</body>
+</html>

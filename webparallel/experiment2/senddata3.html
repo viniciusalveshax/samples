@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- HTML5 -->
+<meta charset="utf-8"/>
+<script src="return.js"></script>
+<script>
+
+// create the worker
+var worker = new Worker("return2.js");
+
+// listen to the response from the Worker
+worker.addEventListener('message', receiveMessage);
+
+started = Date.now();
+
+var mem = new SharedArrayBuffer(1024*1024*16);
+
+for (var i = 0; i < mem.length; ++i) {
+    mem[i] = i;
+}
+
+// we send some data
+worker.postMessage([mem],[mem]);
+
+// callback handling the response, data is available in the event object
+function receiveMessage (e)
+{
+    console.log ("Back/forth transfer : " + (Date.now() - started) + " ms");
+	console.log(e.data[0]);
+
+
+	var uInt8View = new Uint8Array(e.data[0]); // 16MB
+	for (var i = 0; i < 5; ++i) {
+		console.log(uInt8View[i]);
+	}
+
+
+}
+
+
+</script>
+</head>
+
+<body >
+
+
+
+</body>
+</html>

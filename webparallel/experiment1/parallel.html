@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- HTML5 -->
+<meta charset="utf-8"/>
+<script src="parallel.js"></script>
+<script>
+
+/*
+var p = new Parallel([0, 1, 2, 3, 4, 5, 6]),
+    log = function () { console.log(arguments); };
+ 
+// One gotcha: anonymous functions cannot be serialzed
+// If you want to do recursion, make sure the function
+// is named appropriately
+function fib(n) {
+  return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
+};
+ 
+p.map(fib).then(log);
+*/
+
+	function calculatepi() {
+
+		var p = new Parallel([0, 1, 2, 3]);
+
+		function calcparcel(n) {
+
+			function piparcel(i) {
+				den = 2*i + 1;
+				if ((i % 2) == 0)
+					num = 1;
+				else
+					num = -1;
+				return (num/den);
+			}
+
+			begin = n*250000;
+			end = (n+1)*250000;
+
+			total = 0;
+			for(i=begin; i<end; i++)
+				total+=piparcel(i);
+
+			return total;
+		}	
+		 
+		function log() { console.log("Resultado: " + arguments[0]*4); }
+
+		function add(d) { return d[0] + d[1]; }
+
+		p.require(calcparcel);
+
+		start = new Date().getTime();
+		retval = p.map(function (n) { return calcparcel(n); }).reduce(add).then(log);
+
+		stop = new Date().getTime();
+
+		return (stop-start);
+
+	}
+
+	console.log("Tempo (ms): " + calculatepi());
+
+</script>
+</head>
+
+<body >
+
+
+
+</body>
+</html>
