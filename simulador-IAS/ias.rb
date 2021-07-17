@@ -1,3 +1,5 @@
+# Autor: Vinícius Alves Hax
+
 $memory_length         = 1000
 $memory_file           = 'Programa_teste_IAS.txt'  # Arquivo da memoria
 
