@@ -22,22 +22,27 @@
 			processos.forEach(function(processo, i){
 				console.log("Nome: ", processo.nome, " , tempo res: ", processo.restante);
 			});
+			//TODO Mostrar saída na tela ao invés de no console
 			
 			event.preventDefault();
 			});
 
 		// Função que simplesmente escolhe o primeiro processo disponível			
 		function escolhe() {
+			//TODO Verificar se ainda existe algum processo
 			return data["processos"][0];
 		}
 		
-		/*function ciclo() {
-		}*/
-			
-		$("#ciclo-cpu").click(function(event) {
+		function ciclo() {
 			console.log("Mais um ciclo");
 			processo_temp = escolhe();
+			//TODO Verificar se escolhe retornou algum processo
 			processo_temp.restante = processo_temp.restante - 1;
+			//TODO Se restante for 0 então remove processo da lista
+		}
+			
+		$("#ciclo-cpu").click(function(event) {
+			ciclo();			
 			event.preventDefault();
 			});
 			
