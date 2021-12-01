@@ -1,0 +1,18 @@
+{
+  "name": "aula10",
+  "version": "0.0.1",
+  "description": "Teste versão inicial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon ."
+  },
+  "author": "Vinícius Alves Hax",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
