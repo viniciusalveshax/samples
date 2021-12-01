@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <script src="../arquivos/jquery-3.6.0.js"></script>
+    <script src="processos.json"></script>
     <script>
 	$(document).ready(function() {
 					
@@ -13,50 +14,17 @@
             		event.preventDefault();
 			});
 			
-		$("#link4").click(function( event ) {
-            		//alert("Fui clicado");
-            		$("#lista2").append("<li>Item " + i + "</li>");
-			i = i+1;
-            		event.preventDefault();
-			});
-
-		$("#link5").click(function( event ) {
-            		//alert("Fui clicado");
-            		input_value = $("#entrada").val();
-            		value = $("#lista2 li").eq(input_value);
-			alert(value.html());
-            		event.preventDefault();
-			});
-
-		$("#link6").click(function( event ) {
-            		//alert("Fui clicado");
-            		input_value = $("#entrada2").val();
-            		value = $("#lista2 li").eq(input_value);
-            		if (value != undefined)
-				value.remove();
-            		event.preventDefault();
+		$("#mostrar-json").click(function( event ) {
+		
+			alert("Veja o console");
+			console.log(data["processos"].length);
+			processos = data["processos"];
+			processos.forEach(function(processo, i){
+				console.log("Nome: ", processo.nome, " , tempo res: ", processo.restante);
 			});
 			
-		$("#link7").click(function( event ) {
-		
-			$.getJSON(url, funcao);
-		
-            		$.getJSON("http://localhost:8000/recomendo/", (data,status) => {
-            			if (status == "success") {
-     					data = data['recomendacoes'];
-            				html_list = data.map( (elemento) => { return "<li>" + elemento["nome"] + "</li>"} );	
-            				$("#lista3").html(html_list.join(''));
-            				}
-            				
-            				
-            				
-            		}).fail( function() {
-            			alert("Ocorreu um erro");
-            		});
-            		event.preventDefault();
+			event.preventDefault();
 			});
-
-		i = 2;
 			
 		});
 
@@ -68,8 +36,11 @@
     
     <h2>Simulador de escalonador em JS</h2>
     
-    	<a href="#" id="alternar-lista">Ocultar/mostrar lista<a/>
-    	
+    	<ul>
+    	<li><a href="#" id="alternar-lista">Ocultar/mostrar lista<a/></li>
+    	<li><a href="#" id="mostrar-json">Mostrar JSON<a/></li>
+    	</ul>
+
     	<p>Lista de processos</p>
 	<ul id="lista-processos">
 		<li>Item 1</li>
