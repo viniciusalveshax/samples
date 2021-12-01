@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../arquivos/jquery-3.6.0.js"></script>
+    <script>
+	$(document).ready(function() {
+					
+		$("#link1").click(function( event ) {
+            		//alert("Fui clicado");
+            		$("#lista-processos").toggle();
+            		
+            		event.preventDefault();
+			});
+			
+		$("#link4").click(function( event ) {
+            		//alert("Fui clicado");
+            		$("#lista2").append("<li>Item " + i + "</li>");
+			i = i+1;
+            		event.preventDefault();
+			});
+
+		$("#link5").click(function( event ) {
+            		//alert("Fui clicado");
+            		input_value = $("#entrada").val();
+            		value = $("#lista2 li").eq(input_value);
+			alert(value.html());
+            		event.preventDefault();
+			});
+
+		$("#link6").click(function( event ) {
+            		//alert("Fui clicado");
+            		input_value = $("#entrada2").val();
+            		value = $("#lista2 li").eq(input_value);
+            		if (value != undefined)
+				value.remove();
+            		event.preventDefault();
+			});
+			
+		$("#link7").click(function( event ) {
+		
+			$.getJSON(url, funcao);
+		
+            		$.getJSON("http://localhost:8000/recomendo/", (data,status) => {
+            			if (status == "success") {
+     					data = data['recomendacoes'];
+            				html_list = data.map( (elemento) => { return "<li>" + elemento["nome"] + "</li>"} );	
+            				$("#lista3").html(html_list.join(''));
+            				}
+            				
+            				
+            				
+            		}).fail( function() {
+            			alert("Ocorreu um erro");
+            		});
+            		event.preventDefault();
+			});
+
+		i = 2;
+			
+		});
+
+
+    </script>
+    <title>Scheduler Simulator</title>
+</head>
+<body>
+    
+    <h2>Simulador de escalonador em JS</h2>
+    
+    	<a href="#" id="link1">Ocultar/mostrar lista<a/>
+    	
+    	<p>Lista de processos</p>
+	<ul id="lista-processos">
+		<li>Item 1</li>
+	</ul>
+	
+    
+</body>
+</html>
