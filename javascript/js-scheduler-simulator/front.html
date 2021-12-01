@@ -25,6 +25,21 @@
 			
 			event.preventDefault();
 			});
+
+		// Função que simplesmente escolhe o primeiro processo disponível			
+		function escolhe() {
+			return data["processos"][0];
+		}
+		
+		/*function ciclo() {
+		}*/
+			
+		$("#ciclo-cpu").click(function(event) {
+			console.log("Mais um ciclo");
+			processo_temp = escolhe();
+			processo_temp.restante = processo_temp.restante - 1;
+			event.preventDefault();
+			});
 			
 		});
 
@@ -39,6 +54,7 @@
     	<ul>
     	<li><a href="#" id="alternar-lista">Ocultar/mostrar lista<a/></li>
     	<li><a href="#" id="mostrar-json">Mostrar JSON<a/></li>
+    	<li><a href="#" id="ciclo-cpu">Rodar mais um ciclo</a></li>
     	</ul>
 
     	<p>Lista de processos</p>
