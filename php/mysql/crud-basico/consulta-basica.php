@@ -19,8 +19,9 @@ $resultado = mysqli_query($conexao, "SELECT * FROM usuarios");
 echo "<h1>Resultados </h1>";
 while ($linha = mysqli_fetch_assoc($resultado)) {
 	echo $linha['id'] . " " . $linha['nome'] .
-	" <a href='read.php?id=" . $linha['id'] . "'>READ</a>" .
-	" <a href=\"\">UPDATE</a> <a href=''>DELETE</a> <br />";
+	"<a href='read.php?id=" . $linha['id'] . "'>READ</a>" .
+	"<a href=\"\">UPDATE</a>" .
+	"<a href='delete.php?id=" . $linha['id'] . "'>DELETE</a> <br />";
 }
 
 echo "<br /><a href=\"\">CREATE</a>";
