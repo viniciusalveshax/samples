@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Timer</title>
+	
+	<script>
+	
+		hours = 23;
+		minutes = 48;
+		seconds = 0;
+
+		// Add a prefix if necessary
+		function ensureTwoDigits(number) {
+			str_number = String(number);
+			if (number < 10)
+				str_number = '0' + str_number;
+			return str_number;
+		}
+	
+		// Increase counters at every second
+		function timer() {
+			seconds = seconds + 1;
+			if (seconds == 60) {
+				seconds = 0;
+				minutes = minutes + 1;
+				}
+			if (minutes == 60) {
+				hour = hour + 1;
+				minutes = 0;
+				}
+			if (hours == 24) {
+				hours = 0;
+			}
+
+			str_hours   = ensureTwoDigits(hours);
+			str_minutes = ensureTwoDigits(minutes);
+			str_seconds = ensureTwoDigits(seconds);
+							
+			str_time = str_hours + ":" + str_minutes + ":" + str_seconds;
+			document.getElementById("timer").innerHTML = str_time;
+				
+		}
+	
+		// Update timmer at every second
+		window.onload = function () {
+			setInterval(timer, 1000);
+		}
+	</script>
+</head>
+<body>
+	<p id="timer">Tempo</p>
+</body>
+</html>
