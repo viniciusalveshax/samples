@@ -1,0 +1,7 @@
+Enunciado de exercícios
+
+a) Faça um programa (em Python) que leia três valores correspondentes aos lados de um triângulo. O programa deverá dizer se o triângulo é equilátero, isósceles ou escaleno.
+
+b) Faça um programa que mostre uma mensagem “Digite uma palavra” e leia o teclado. Enquanto a palavra NÃO for “sair” o programa deverá repetir a operação
+
+
