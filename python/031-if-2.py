@@ -1,3 +1,6 @@
+# Exemplo 031 que exemplo o uso de if, elif e else em Python
+# Código que diz se dois números são pares, se é um é par ou se nenhum é par
+
 numero1 = 9
 numero2 = 11
 if (numero1%2)==0 and (numero2%2)==0:
