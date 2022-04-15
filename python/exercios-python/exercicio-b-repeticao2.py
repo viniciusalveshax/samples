@@ -1,3 +1,5 @@
+# No python 3 use input ao inves de raw_input
+
 resposta = "qualquercoisa"
 
 while(resposta != "nao"):
