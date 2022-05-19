@@ -1,0 +1,23 @@
+/* Seleciona todo p que estiver imediatamente dentro de uma div, que por sua vez está dentro de outra div */
+div> div > p {
+
+color: green;
+
+}
+
+
+
+/* Aqui a cor preta é aplicada em todos os a que estão abaixo de uma div */
+div a {
+color: black;
+}
+
+
+/* Aqui a cor roxa é aplicada em todos os a que estão IMEDIATAMENTE abaixo de uma div */
+div > a {
+
+color: purple;
+
+}
+
+
