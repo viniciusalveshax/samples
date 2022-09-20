@@ -1,0 +1,7 @@
+LEIA-ME
+
+Fonte das imagens:
+
+rocket.svg retirado de https://interactive-examples.mdn.mozilla.net/media/examples/rocket.svg
+
+Ponte do rio Jaguarão retirado de https://wordpress.org/openverse/image/a1036c59-77ca-4402-a511-e020cfe42abb
