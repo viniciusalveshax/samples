@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Exemplo 2 de CSS Flex</title>
+	<style type="text/css">
+
+	div#principal {
+		border: 1px solid black;
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	div#vertical {
+		border: 1px solid black;
+		display: flex;
+		flex-direction: column;
+		height: 250px;
+		justify-content: flex-start;
+	}
+
+	
+	.quadrado {
+		border: 1px solid blue;
+		margin: 2px;
+		min-width: 10px;
+		min-height: 10px;
+
+	}
+
+	</style>
+	
+</head>
+<body>
+
+<div id="principal">
+
+	<div class="quadrado">1
+	</div>
+
+	<div class="quadrado">2
+	</div>
+
+	<div class="quadrado">3
+	</div>
+
+	<div class="quadrado">4
+	</div>
+
+	<div class="quadrado">5
+	</div>
+
+	<div class="quadrado">6
+	</div>
+
+	<div id="sete" class="quadrado">7
+	</div>
+
+	<div id="ultimo" class="quadrado">8
+	</div>
+
+</div>
+
+<hr />
+
+<div id="vertical">
+
+	<div class="quadrado">1
+	</div>
+
+	<div class="quadrado">2
+	</div>
+
+	<div class="quadrado">3
+	</div>
+
+	<div class="quadrado">4
+	</div>
+
+	<div class="quadrado">5
+	</div>
+
+	<div class="quadrado">6
+	</div>
+
+	<div id="sete" class="quadrado">7
+	</div>
+
+	<div id="ultimo" class="quadrado">8
+	</div>
+
+</div>
+
+</body>
+</html>
