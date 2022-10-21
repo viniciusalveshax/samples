@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>JQuery - Pegando um valor</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#input3").click(function() {
+				input1 = $('#input1').val();
+				input2 = $('#input2').val();
+				console.log(input1);
+				$('#paragrafo1').text("Mudou");
+			});
+		});
+	</script>
+</head>
+<body>
+	<input id="input1" type="text" placeholder="Digite aqui" />
+	<input id="input2" type="text"  placeholder="Digite aqui" />
+	<input id="input3" type="button" value="Enviar" />
+	<p id="paragrafo1">Resultado</p>
+</body>
+</html>
