@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>JQuery - Pegando um valor</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#input1").click(function() {
+				$('#paragrafo1').text("Mudou");
+			});
+		});
+	</script>
+</head>
+<body>
+	<p id="paragrafo1">Texto original</p>
+	<input id="input1" type="button" value="Enviar" />
+</body>
+</html>
