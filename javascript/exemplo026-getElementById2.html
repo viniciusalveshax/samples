@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript - Exemplo </title>
+	<script>
+		function mostra() {
+			paragrafo = document.getElementById("paragrafo");
+			console.log("innerHTML do parágrafo: " + paragrafo.innerHTML);
+			console.log("textContent do parágrafo: " + paragrafo.textContent);
+		}
+	</script>
+</head>
+<body>
+
+	<p id="paragrafo">Digite um texto e depois clique em <b>"Mostra Texto"</b></p>
+	<input type="submit" value="Mostra Texto" onclick="mostra();" />
+</body>
+</html>
