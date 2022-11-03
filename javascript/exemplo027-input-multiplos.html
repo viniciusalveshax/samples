@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript - Exemplo 4 </title>
+	<script>
+		function calcula() {
+			numero1 = document.getElementById("numero1").value;
+			numero2 = document.getElementById("numero2").value;
+			resultado = numero1 + numero2;
+			alert(resultado);
+		}
+	</script>
+
+
+</head>
+<body>
+
+	<p>Digite dois números e depois clique em "Calcular"</p>
+	<input type="text" id="numero1" />
+	<input type="text" id="numero2" />
+	<input type="submit" value="Calcular" onclick="calcula();" />
+</body>
+</html>
