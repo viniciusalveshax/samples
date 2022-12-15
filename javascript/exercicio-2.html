@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript - Exemplo 4 </title>
+	<script>
+		contador = 0;
+
+		function conta() {
+			contador = contador + 1;
+
+			if (contador == 1)
+				alert("Você clicou uma vez");	
+			else
+				alert("Você clicou " + contador + " vezes");
+		}
+	</script>
+
+
+</head>
+<body>
+	<p>Clique no campo de texto ou no botão</p>
+	<input type="text" id="numero1" onclick="conta();"/>
+	<input type="submit" value="Calcular" onclick="conta();" />
+</body>
+</html>

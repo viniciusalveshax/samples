@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript - Exemplo 4 </title>
+	<script>
+		function calcula() {
+			str_numero1 = document.getElementById("numero1").value;
+			str_numero2 = document.getElementById("numero2").value;
+			operacao = document.getElementById("operacao").value;
+			console.log(operacao);
+			numero1 = Number(str_numero1);
+			numero2 = Number(str_numero2);
+			if (operacao == "soma")
+				resultado = numero1 + numero2;
+			if (operacao == "sub")
+				resultado = numero1 - numero2;
+			if (operacao == "mult")
+				resultado = numero1 * numero2;
+			alert(resultado);
+		}
+	</script>
+
+
+</head>
+<body>
+
+	<p>Digite dois números e depois clique em "Calcular"</p>
+	<input type="text" id="numero1" />
+	<input type="text" id="numero2" />
+
+	<select id="operacao">
+		<option value="soma">Soma</option>
+		<option value="sub">Subtração</option>
+		<option value="mult">Multiplicação</option>
+	</select>
+
+	<input type="submit" value="Calcular" onclick="calcula();" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

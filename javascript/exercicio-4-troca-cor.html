@@ -1,0 +1,50 @@
+<html>
+
+<script type="text/javascript">
+
+	function trocaCor() {
+		cor = document.getElementById("cor").value;
+		console.log(cor);
+			document.getElementById("p1").style.color=cor;
+	
+
+	}
+
+	function trocaPeso() {
+		peso = document.getElementById("peso").value;
+		console.log(peso);
+			document.getElementById("p1").style.fontWeight=peso;
+	
+
+	}
+
+
+</script>
+
+<body>
+
+	<h2>Exemplo de seleção (select box)</h2>
+	
+	<p id="p1" style="color: yellow;">Este parágrafo irá trocar de cor</p>
+	
+	<form> <!-- Início do form -->
+
+	<p>Escolha a cor</p>	
+	<select id="cor" onchange="trocaCor();">
+		<option value="green">Green</option>
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+	</select>
+
+	<p>Escolha o peso</p>
+	<select id="peso" onchange="trocaPeso();">
+		<option value="normal">Normal</option>
+		<option value="bold">Bold</option>
+		<option value="lighter">Lighter</option>
+		<option value="bolder">Bolder</option>
+	</select>
+
+	</form>
+</body>
+
+</html>
