@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+	$(document).ready(function() {
+			
+		$("#link7").click(function( event ) {
+			
+            		$.getJSON("https://v2.jokeapi.dev/joke/Any?safe-mode", (data,status) => {
+            			if (status == "success") {
+     					punchline = data['setup'];
+delivery  = data['delivery'];
+            				html_list = "<p>" + punchline + "</p>"  + "<p>" + delivery + "</p>";	
+            				$("#lista3").html(html_list);
+            				}
+            				
+            				
+            				
+            		}).fail( function() {
+            			alert("Ocorreu um erro");
+            		});
+            		event.preventDefault();
+			});
+
+		i = 2;
+			
+		});
+
+
+    </script>
+    <title>Exemplo</title>
+</head>
+<body>
+    
+    <h2>Links</h2>
+    
+    <p><a href="#" name="link7" id="link7">Carregar json remoto</a></p> 
+
+     <hr />
+     
+     <h2>Conteúdo</h2>
+
+    <p>Lista 3</p>    
+    <ul name="lista3" id="lista3">
+    </ul>
+    
+</body>
+</html>
