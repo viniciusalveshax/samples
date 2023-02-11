@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+	$(document).ready(function() {
+			
+		$("#link7").click(function( event ) {
+			
+			//Aqui eu mandei procurar piadas com o termo 'cat'
+            		$.getJSON("https://v2.jokeapi.dev/joke/Any?contains=cat", (data,status) => {
+            			if (status == "success") {
+            			
+            				// data contém as informações da piada
+            				// data['type'] tem o tipo da piada: uma ou duas partes
+            				type = data['type'];
+            				
+					// data['flags'] é um array com as flags
+					flags = data['flags'];
+					
+					// agora pegamos as flags
+					nsfw = flags['nsfw'];
+					religious = flags['religious'];
+					political = flags['political'];
+					racist = flags['racist'];
+					sexist = flags['sexist'];
+					explicit = flags['explicit'];
+					
+					// montamos uma string com as flags para mostrar
+					msg_flags = "nsfw" + nsfw + ", religious: " + religious + ", political: " + political + ", racist: " + racist + ", sexist: " + sexist + ", explicit: " + explicit;
+					// mostramos o conteúdo das flags no console
+					// aperte F12 para mostrar o console
+					console.log(msg_flags);
+					
+					// Verifico se a piada tem duas partes ou não
+					// Isso é necessário pois os nomes dos campos mudam
+					// Piadas com duas partes tem o conteúdo salvo nos campos 'setup' e 'delivery'
+					if (type == "twopart") {
+						setup = data['setup'];
+     						delivery  = data['delivery'];
+     						content = "<li>" + setup + "<br>" + delivery + "</li>";
+     						}
+     					else
+     						{
+     						// Se for uma piada com uma única parte o conteúdo fica no campo 'joke'
+     						joke = data['joke'];
+     						content = "<li>" + joke + "</li>";
+     						}
+					
+					// No meu caso, por exemplo, eu não quero mostrar piadas racistas, sexistas ou explícitas
+					// então eu testo essas flags. Se alguma for verdadeiro eu altero o conteúdo
+					// TODO Adaptem de acordo com as flags que vocês querem mostrar
+					if (explicit || racist || sexist)
+            					content = "<li>Essa não dá pra mostrar não :(</li>";
+					
+            				$("#lista3").append(content);
+            				}
+            				
+            				
+            				
+            		}).fail( function() {
+            			alert("Ocorreu um erro");
+            		});
+            		event.preventDefault();
+			});
+			
+		});
+
+
+    </script>
+    <title>Exemplo</title>
+</head>
+<body>
+    
+    <h2>Links</h2>
+    
+    <p><a href="#" name="link7" id="link7">Clique para carregar uma piada</a></p> 
+
+     <hr />
+     
+     <h2>Piadas</h2>
+
+    <ul name="lista3" id="lista3">
+    </ul>
+    
+</body>
+</html>
