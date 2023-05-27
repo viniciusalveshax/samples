@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function calcular(){
+
+um = document.getElementById("p1").value;
+
+dois = document.getElementById("p2").value;
+
+op = document.getElementById("op").value;
+
+um = Number(um);
+
+dois = Number(dois);
+
+
+if (op == "+"){
+
+resultado = um + dois;
+
+alert(resultado);
+
+}
+if (op == "-"){
+
+resultado = um - dois;
+
+alert(resultado);
+}
+if (op == "*"){
+
+resultado = um * dois;
+
+alert(resultado);
+}
+if (op == "/"){
+if (dois != 0){
+
+resultado = um / dois;
+alert(resultado);
+} else {
+
+alert("nenhum numero pode ser dividido por zero");
+}
+
+}
+}
+</script>
+</head>
+<body>
+
+<input type="text" id="p1" placeholder="Digite o numero"/>
+<input id="op" type="text" placeholder="+ - / *" />
+<input type="text" id="p2" placeholder="Digite outro numero"/>
+
+
+
+<input onclick="calcular();" type="button" />
+
+</body>
+</html>
+
