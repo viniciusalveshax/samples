@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<title>Título</title>
+<script type="text/javascript">
+
+	function teste1(){
+
+		id_imagem = 1 - id_imagem;
+		document.getElementById("inexistente").innerHTML = imagens[id_imagem];
+
+	}
+
+
+	function trocaImagem(){
+
+		id_imagem = 1 - id_imagem;
+		console.log("imgtroca" + document.getElementById("imgTroca1"));
+		document.getElementById("imgTroca").innerHTML = imagens[id_imagem];
+
+	}
+	
+	function trocaTexto() {
+
+		id_texto = 1 - id_texto;
+		console.log("txttroca" + document.getElementById("txtTroca"));
+		document.getElementById("txtTroca").innerHTML = textos[id_texto];
+	
+	}
+
+	function trocaSrc() {
+	
+		id_imagem = 1 - id_imagem;	
+		document.getElementById("imgTroca1").src=srcs[id_imagem];
+
+	}
+	
+	function teste() {
+
+		console.log("ola");
+
+	}
+	
+	// Imagens retiradas da Wikipédia
+	imagens = ["<img id=\'imgTroca1\' src=\'arquivos/imagem0.jpg\' />", "<img id=\'imgTroca1\' src=\'arquivos/imagem1.jpg\' />"];
+	srcs = ["arquivos/imagem0.jpg", "arquivos/imagem1.jpg"];
+	textos = ["aaaa", "bbbb"];
+	
+	id_imagem = 1;
+	id_texto = 1;
+
+	window.onload=trocaImagem;
+
+</script>
+<style type="text/css">
+
+	img {
+		height: 200px;
+		width: 200px;
+	}
+
+</style>
+</head>
+<body>
+<div id="imgTroca">
+<img id="imgTroca1" src="arquivos/imagem1.jpg" />
+</div>
+<p id="txtTroca">Texto 1</p>
+<input type="submit" onclick="trocaImagem();" value="Trocar tag de imagem" />
+<input type="submit" onclick="trocaTexto();" value="Trocar texto" />
+<input type="submit" onclick="trocaSrc();" value="Trocar src" />
+</body>
+<script>
+	//trocaImagem();
+</script>
+</html>
