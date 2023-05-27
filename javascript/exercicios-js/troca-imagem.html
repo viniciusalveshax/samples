@@ -1,0 +1,22 @@
+<!doctype>
+<html lang="pt-br">
+<head>
+	<script>
+		function mudaImagem() {
+			alert(ponte);
+			imagem1 = document.getElementById("imagem");
+			if (ponte) {			
+				imagem1.src = "ponte_fronteira_jaguarao.jpg";
+				}
+			else {
+				imagem1.src = "Lion.jpg";
+				}
+			ponte = 1 - ponte;
+		}
+		ponte = 1;
+	</script>
+</head>
+<body>
+	<img id="imagem" onclick="mudaImagem();" src="Lion.jpg" />
+</body>
+</html>
