@@ -1,0 +1,24 @@
+<!doctype>
+<html lang="pt-br">
+<head>
+	<script>
+		function aumentaImagem() {
+			imagem1 = document.getElementById("imagem");
+			altura = altura + 30;
+			largura = largura + 30;
+			imagem1.style.width = largura + "px";
+			imagem1.style.height = altura + "px";
+		}
+		function diminuiImagem() {
+		}
+
+		altura = 280;
+		largura = 280;
+	</script>
+</head>
+<body>
+	<img id="imagem" onclick="mudaImagem();" src="Lion.jpg" />
+	<input type="button" onclick="aumentaImagem();" value="+" />
+	<input type="button" onclick="diminuiImagem();" value="-" />
+</body>
+</html>
