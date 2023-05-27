@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<title>Titulo da página</title>
+<script>
+	function A() {
+		alert("Chamei a função A");	
+
+	}
+	function B() {
+		alert("Chamei a função B");	
+
+	}
+	function C() {
+		//alert("Chamando a função C");
+		valor_escolha = document.getElementById("escolhe").value;
+		//alert(valor_escolha);	
+		if (valor_escolha == "a" || valor_escolha == "A") {
+			A();
+			}
+		if (valor_escolha == "b" || valor_escolha == "B") {
+			B();
+			}
+	}
+</script>
+</head>
+<body>
+<input type="text" id="escolhe" />
+<input type="submit" onclick="C();" />
+</body>
+</html>
