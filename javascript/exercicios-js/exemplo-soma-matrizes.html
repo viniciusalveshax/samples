@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<script>
+
+	function somaMatrizes(m1, m2) {
+	//// Exercício
+	for(i=0; i<m1.length; i++)
+		m3.push([]);
+
+	for(linha = 0; linha <= m1.length; linha=linha+1)
+		for(coluna=0; coluna <= m1.length; coluna=coluna+1)
+			m3[linha][coluna] = m1[linha][coluna] + m2[linha][coluna];
+	return m3;
+	}
+	
+	matriz1 = [[0, 1, 2, 3], [2, 3, 5, 8], [45, 9, 7, 11], [9, 10, 13, 27]];
+	matriz2 = [[1, 1, 10, 10], [8, 10, 5, 6], [8, 9, 10, 20], [4, 5, 9, 10]];
+	matriz3 = somaMatrizes(matriz1, matriz2);
+	console.log(matriz3);
+</script>
+</head>
+<body>
+</body>
+</html>
