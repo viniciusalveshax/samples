@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Exemplo 1 de CSS Grid</title>
+	<style type="text/css">
+
+	* {
+	margin: 0px;
+	
+	}
+
+	div#galeria {
+		display: grid;
+		grid-template-columns: 33% 33% 33%;
+		grid-template-rows: 150px 150px 100px;
+		/*grid-column-gap: 10px;
+		grid-row-gap: 10px;*/
+	}
+	
+	img {
+		height: 140px;
+		
+	}
+
+	img#cima_esq {
+		border-top-left-radius: 20px;
+	}
+
+	img#cima_dir {
+		border-top-right-radius: 20px;
+	}
+
+	.quadrado {
+		min-width: 10px;
+		min-height: 10px;
+		background-color: blue;
+	}
+
+	</style>
+	
+</head>
+<body>
+
+<div id="galeria">
+
+	<img id="cima_esq" src="montanha.jpeg" />
+	<img src="montanha.jpeg" />
+	<img id="cima_dir" src="montanha.jpeg" />
+
+	<img src="montanha.jpeg" />
+	<img src="montanha.jpeg" />
+	<img src="montanha.jpeg" />
+
+	<img src="montanha.jpeg" />
+	<img src="montanha.jpeg" />
+	<img src="montanha.jpeg" />
+</div>
+
+
+</body>
+</html>
