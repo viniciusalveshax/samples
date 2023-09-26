@@ -1,3 +1,5 @@
+import React, { Fragment } from 'react'
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
@@ -11,18 +13,32 @@ import Seletor from './components/Seletor';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+
 const HomeScreen = ({navigation}) => {
   return (
-    <Button
-      title="Go to Jane's profile"
-      onPress={() =>
-        navigation.navigate('Profile', {name: 'Jane'})
-      }
-    />
+	<React.Fragment>
+	    <Button
+	      title="Doces de banana"
+	      onPress={() =>
+		navigation.navigate('Profile', {tipo: 'banana'})
+	      }
+	    />
+
+	    <Button
+	      title="Doces de mel"
+	      onPress={() =>
+		navigation.navigate('Profile', {tipo: 'mel'})
+	      }
+	    />
+	</React.Fragment>
   );
 };
+
 const ProfileScreen = ({navigation, route}) => {
-  return <Text>This is {route.params.name}'s profile</Text>;
+  if (route.params.tipo == 'mel')
+  return <Text>This is {route.params.tipo}'s profile</Text>;
+  else
+  return <Text>Esse é o perfil de {route.params.tipo} </Text>;
 };
 
 const Stack = createNativeStackNavigator();
@@ -31,10 +47,11 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
 //Exemplo 1
-	<View style={styles.container}>
+/*	<View style={styles.container}>
 		<Text>Open up App.js to start working on your app!!!</Text>
 		<StatusBar style="auto" />
 	</View>
+*/
 //Fim do exemplo 1
 
 //Exemplo 2
@@ -62,7 +79,6 @@ export default function App() {
 //Fim do exemplo 3
 
 // Exemplo 4
-/*
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -73,8 +89,9 @@ export default function App() {
         <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>		
-*/
 // Fim do exemplo 4
+
+
 
   );
 }
