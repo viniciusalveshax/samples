@@ -1,0 +1,7 @@
+xyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+d00/
+d01home
+f02arquivo.txt                   ola fulano
+d01root
+f02arquivo2.doc                  outro arquivo
+d02diretorio-com-nome-bem-longo
