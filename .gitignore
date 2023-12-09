@@ -1,2 +1,4 @@
 *.class
 *~
+python/__pycache__/
+C/a.out
