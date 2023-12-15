@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript - Questão 1 </title>
+	<script>
+		function calcular() {
+			tag1 = document.getElementById("valor1");
+			tag2 = document.getElementById("operacao");
+			tag3 = document.getElementById("valor2");
+			tag_resultado = document.getElementById("resultado");
+			valor_tag1 = tag1.value;
+			valor_tag2 = tag2.value;
+			valor_tag3 = tag3.value;
+			valor_tag1_numero = Number(valor_tag1);
+			valor_tag3_numero = Number(valor_tag3);
+			if (valor_tag2 == "+")
+				resultado = valor_tag1_numero + valor_tag3_numero;
+			else if (valor_tag2 == "-")
+				resultado = valor_tag1_numero - valor_tag3_numero;
+			else if (valor_tag2 == "*")
+				resultado = valor_tag1_numero * valor_tag3_numero;
+			else if (valor_tag2 == "/")
+				resultado = valor_tag1_numero / valor_tag3_numero;
+			tag_resultado.innerHTML = "Resultado: " + resultado;
+		}
+	</script>
+</head>
+<body>
+	<p>Primeiro valor: <input type="text" id="valor1" /></p>
+	<p>Operação (digite +, -, * ou /): <input type="text" id="operacao" /></p>
+	<p>Segundo valor: <input type="text" id="valor2" /></p>
+	<p><input type="submit" value="Calcular" onclick="calcular()" /></p>
+	<p id="resultado">Resultado:</p>
+</body>
+</html>

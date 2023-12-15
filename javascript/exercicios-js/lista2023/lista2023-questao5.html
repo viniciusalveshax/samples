@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript - Questão 1 </title>
+	<script>
+
+		lado1 = prompt("Digite o primeiro lado do triângulo");
+		lado2 = prompt("Digite o segundo lado do triângulo");
+		lado3 = prompt("Digite o terceiro lado do triângulo");
+
+		numero1 = Number(lado1);
+		numero2 = Number(lado2);
+		numero3 = Number(lado3);
+
+		if ( (numero1 == numero2) && (numero2 == numero3) )
+			console.log("Triângulo equilátero");
+		else
+			if ( (numero1 == numero2) || (numero2 == numero3) || (numero1 == numero3) )
+				console.log("Triângulo isósceles");
+			else
+				console.log("Triângulo escaleno");
+
+	</script>
+</head>
+<body>
+</body>
+</html>

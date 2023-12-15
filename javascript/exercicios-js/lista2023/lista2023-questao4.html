@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript - Questão 1 </title>
+	<script>
+		function getRandomInt(max) {
+			  numero_com_virgula_aleatorio = Math.random();
+			  numero_com_virgula_ate_max = numero_com_virgula_aleatorio * max;
+			  numero_inteiro = Math.floor(numero_com_virgula_ate_max);
+			  return numero_inteiro;
+		}
+		function mostra() {
+			numero = getRandomInt(3);
+			img0 = document.getElementById("imagem0");
+			img1 = document.getElementById("imagem1");
+			img2 = document.getElementById("imagem2");
+
+			img0.style.opacity = "100%";
+			img1.style.opacity = "100%";
+			img2.style.opacity = "100%";
+
+			img_transparente = document.getElementById("imagem"+numero);
+			img_transparente.style.opacity = "50%";
+		}
+	</script>
+</head>
+<body>
+	<p>
+		<img id="imagem0" src="sol.jpg" class="">
+		<img  id="imagem1" src="sol.jpg" class="transparente">
+		<img  id="imagem2" src="sol.jpg" class="">
+	</p>
+	<p><input type="submit" value="Deixe uma imagem transparente" onclick="mostra()" /></p>
+</body>
+</html>
