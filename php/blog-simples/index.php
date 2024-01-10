@@ -2,6 +2,7 @@
 
 require "header.php";
 
+$grupo = "blogs";
 $usuario = $grupo;
 $senha = $grupo;
 $base_de_dados = $grupo;
