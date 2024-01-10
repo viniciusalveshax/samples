@@ -40,7 +40,9 @@ if ($erro == false) {
 		
 		// Não devemos salvar a senha com seu valor normal no SGBD pois isso expõe a senha do usuário, então codificamos ela antes
 		// Não resolve todos os problemas mas já é alguma coisa
-		$password1 = password_hash("password1", PASSWORD_DEFAULT);
+		echo "Senha original $password1";
+		$password1 = password_hash($password1, PASSWORD_DEFAULT);
+		echo "Senha gerada $password1";
 		
 		// Executa o SQL substituindo cada uma das variáveis pelos pontos de interrogação
 		$stmt->execute([$email, $password1]);
