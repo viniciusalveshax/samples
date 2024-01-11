@@ -1,6 +1,9 @@
 <?php
 
+// Testa se a sessão existe
 if ($_SESSION["user_id"]) {
+	
+	// Destrói as variáveis da sessão
 	unset($_SESSION["user_id"]);
 	unset($_SESSION["email"]);
 	}
