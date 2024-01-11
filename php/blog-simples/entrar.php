@@ -47,8 +47,8 @@ if ($erro == false) {
 
 		}
 		
-
-print_r($user);
+		$_SESSION["user_id"] = $usuario["id"];
+		$_SESSION["email"]   = $usuario["email"];
 /*
 $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = '?'");
 $stmt->execute([$email]);
